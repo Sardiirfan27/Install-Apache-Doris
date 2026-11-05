@@ -1,16 +1,16 @@
 # Apache Doris 4.1.3 – Docker Installation Guide
 
-Panduan instalasi **Apache Doris 4.1.3** menggunakan Docker Compose dengan konfigurasi:
+Instalasi **Apache Doris 4.1.3** menggunakan Docker Compose dengan konfigurasi dasar:
 
 - **Frontend (FE):** Apache Doris 4.1.3
-- **Backend (BE):** Custom Docker Image dengan Python UDF Support
+- **Backend (BE):** Custom Docker Image Apache Doris dengan Python UDF Support
 - **Python:** 3.12.11
 - **Python Environment:** Miniforge / Conda
 - **Python Dependencies:** pandas, pyarrow, libarrow-flight
 
 ---
 
-## 1. Prerequisites
+## 1. Prasyarat Sebelum Instalasi
 
 Pastikan beberapa kebutuhan berikut sudah tersedia:
 
@@ -80,7 +80,7 @@ Folder `data` dan subfolder yang digunakan pada bind mount akan dibuat otomatis 
 
 ---
 
-## 3. Build dan Jalankan Apache Doris
+## 3. Proses Instalasi (Build dan Jalankan Apache Doris)
 
 Buka terminal pada direktori project `apache_doris`.
 
