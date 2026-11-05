@@ -78,6 +78,7 @@ Keterangan:
 
 Folder `data` dan subfolder yang digunakan pada bind mount akan dibuat otomatis oleh Docker jika belum tersedia.
 File `.env` juga tidak wajib dibuat ya.
+
 ---
 
 ## 3. Proses Instalasi (Build dan Jalankan Apache Doris)
