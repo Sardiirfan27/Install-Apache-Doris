@@ -60,7 +60,7 @@ Pastikan struktur project sudah disiapkan seperti berikut:
 ```text
 apache_doris/
 │
-├── docker-compose-doris.yml
+├── docker-compose-doris.yaml
 ├── Dockerfile.be
 ├── .env
 │
@@ -71,7 +71,7 @@ Keterangan:
 
 | File / Folder | Fungsi |
 |---|---|
-| docker-compose-doris.yml | Konfigurasi service FE, BE, network, port, dan volume |
+| docker-compose-doris.yaml | Konfigurasi service FE, BE, network, port, dan volume |
 | Dockerfile.be | Membuat custom image BE dengan Python UDF support |
 | .env | Menyimpan konfigurasi environment variable |
 | data/ | Menyimpan data dan log Apache Doris |
@@ -90,7 +90,7 @@ Buka terminal pada direktori project `apache_doris`.
 Jalankan:
 
 ```bash
-docker compose -f docker-compose-doris.yml config
+docker compose -f docker-compose-doris.yaml config
 ```
 
 Tujuan:
@@ -105,7 +105,7 @@ Jika tidak ada error, lanjutkan ke tahap berikutnya.
 Jalankan:
 
 ```bash
-docker compose -f docker-compose-doris.yml up -d --build
+docker compose -f docker-compose-doris.yaml up -d --build
 ```
 
 Perintah ini akan:
@@ -131,7 +131,7 @@ Build pertama mungkin membutuhkan waktu lebih lama karena harus mengunduh image 
 Setelah proses selesai, periksa status container:
 
 ```bash
-docker compose -f docker-compose-doris.yml ps
+docker compose -f docker-compose-doris.yaml ps
 ```
 
 Pastikan kedua container sudah berjalan:
@@ -152,13 +152,13 @@ Jika container belum berjalan, periksa log masing-masing service.
 ### 4.1. Periksa Log FE
 
 ```bash
-docker compose -f docker-compose-doris.yml logs --tail=50 fe-1
+docker compose -f docker-compose-doris.yaml logs --tail=50 fe-1
 ```
 
 ### 4.2. Periksa Log BE
 
 ```bash
-docker compose -f docker-compose-doris.yml logs --tail=50 be-1
+docker compose -f docker-compose-doris.yaml logs --tail=50 be-1
 ```
 
 Pastikan tidak ada error startup yang berulang.
@@ -316,49 +316,49 @@ Berikut beberapa perintah yang sering digunakan.
 ### Melihat Status Container
 
 ```bash
-docker compose -f docker-compose-doris.yml ps
+docker compose -f docker-compose-doris.yaml ps
 ```
 
 ### Melihat Log Semua Service
 
 ```bash
-docker compose -f docker-compose-doris.yml logs -f
+docker compose -f docker-compose-doris.yaml logs -f
 ```
 
 ### Menghentikan Container
 
 ```bash
-docker compose -f docker-compose-doris.yml stop
+docker compose -f docker-compose-doris.yaml stop
 ```
 
 ### Menjalankan Kembali Container
 
 ```bash
-docker compose -f docker-compose-doris.yml start
+docker compose -f docker-compose-doris.yaml start
 ```
 
 ### Restart Container
 
 ```bash
-docker compose -f docker-compose-doris.yml restart
+docker compose -f docker-compose-doris.yaml restart
 ```
 
 ### Menghapus Container dan Network
 
 ```bash
-docker compose -f docker-compose-doris.yml down
+docker compose -f docker-compose-doris.yaml down
 ```
 
 ### Build Ulang Custom Image BE
 
 ```bash
-docker compose -f docker-compose-doris.yml build --no-cache be-1
+docker compose -f docker-compose-doris.yaml build --no-cache be-1
 ```
 
 Kemudian jalankan kembali:
 
 ```bash
-docker compose -f docker-compose-doris.yml up -d
+docker compose -f docker-compose-doris.yaml up -d
 ```
 
 **Penting:** Jangan menggunakan `docker compose down -v` atau menghapus folder `data` jika masih ingin mempertahankan metadata dan data Apache Doris.
